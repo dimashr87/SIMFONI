@@ -1,0 +1,136 @@
+/* ---------- Layout umum ---------- */
+body { background: #eef8fc; }
+.otomatisasi-navbar { background: white; border-bottom: 3px solid #ff6b2b; color: #000000; font-weight: bold; }
+.otomatisasi-navbar .navbar-brand { color: #000000; }
+.otomatisasi-navbar .btn-outline-secondary { color: #000000; border-color: rgba(0, 0, 0, 0.35); }
+.otomatisasi-navbar .btn-outline-secondary:hover { color: #ff6b2b; background: #ffffff; border-color: #ffffff; }
+.otomatisasi-card { border: 1px solid #d8e3e7; box-shadow: 0 12px 30px rgba(36, 62, 74, 0.12); }
+.otomatisasi-card .card-footer { background: #f4faef; border-top: 1px solid #d8e3e7; }
+
+/* ---------- Dashboard: tabel rincian berita ---------- */
+
+#tabelBeritaDatatable {
+    table-layout: fixed;
+    width: 100% !important;
+}
+#tabelBeritaDatatable th,
+#tabelBeritaDatatable td {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    vertical-align: top;
+    font-size: 0.875rem;
+}
+#tabelBeritaDatatable .kolom-judul     { width: 28%; }
+#tabelBeritaDatatable .kolom-tanggal   { width: 11%; }
+#tabelBeritaDatatable .kolom-sumber    { width: 13%; }
+#tabelBeritaDatatable .kolom-ringkasan { width: 48%; }
+
+#tabelBeritaDatatable td a.judul-berita {
+    font-weight: 600;
+    color: #344767;
+}
+#tabelBeritaDatatable td a.judul-berita:hover {
+    color: #ff6b2b;
+}
+
+/* Ringkasan dipotong jadi 3 baris; klik "Selengkapnya" untuk membuka penuh */
+.ringkasan-teks {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+}
+.ringkasan-teks.terbuka {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+.btn-selengkapnya {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #ff6b2b;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* ---------- Dashboard: link "Lihat rincian berita" ---------- */
+
+.toggle-rincian {
+    color: #344767;
+    font-weight: 600;
+}
+.toggle-rincian:hover {
+    color: #ff6b2b;
+}
+.toggle-rincian .chevron {
+    transition: transform 0.2s ease;
+}
+.toggle-rincian[aria-expanded="true"] .chevron {
+    transform: rotate(90deg);
+}
+
+/* ---------- Dashboard: tombol & pop-up pengaturan keyword ---------- */
+.btn-pengaturan {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #d8e3e7;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #67748e;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.3s ease;
+}
+.btn-pengaturan:hover {
+    color: #ff6b2b;
+    transform: rotate(45deg);
+}
+
+.daftar-keyword {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+.chip-keyword {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background: #fff1ea;
+    border: 1px solid #ffc9b0;
+    color: #344767;
+    font-size: 0.8rem;
+}
+.chip-keyword.chip-dasar {       /* keyword dasar: tidak bisa dihapus */
+    background: #eef2f5;
+    border-color: #d8e3e7;
+}
+.btn-hapus-keyword {
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: 1;
+    font-size: 1rem;
+    color: #a0a8b5;
+    cursor: pointer;
+}
+.btn-hapus-keyword:hover {
+    color: #ea0606;
+}
+
+.preview-query {
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    background: #f4f6f8;
+    border: 1px solid #d8e3e7;
+    color: #344767;
+    font-size: 0.8rem;
+}
