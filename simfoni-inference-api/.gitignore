@@ -1,0 +1,18 @@
+# rahasia (API key, token)
+.env
+.env.local
+
+# model hasil fine-tuning (diunduh dari Hugging Face / disimpan lokal)
+models/
+
+# virtual environment Python
+simfonienv/
+venv/
+.venv/
+
+# file buatan Python
+__pycache__/
+*.pyc
+
+# log
+*.log
